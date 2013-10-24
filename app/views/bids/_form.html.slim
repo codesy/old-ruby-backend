@@ -1,0 +1,14 @@
+= form_for @bid do |f|
+  fieldset
+    = f.label :username
+    = f.text_field :username
+
+    = f.label :url
+    = f.text_field :url
+
+    = f.label :offer
+    = f.number_field :offer
+
+    = f.label :ask
+    = f.number_field :ask
+  = f.submit

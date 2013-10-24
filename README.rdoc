@@ -32,3 +32,18 @@ Please feel free to use a different markup language if you do not plan to run
 
 Users - Consumers, Providers
 Features
+Bids
+
+== User stories
+
+1. GitHub auth
+check bookmarklet
+
+Provider creates a feature that maps to a GitHub issue
+
+Consumer hits an issue on GitHub
+click on the bookmarklet or copy/paste URL
+auth with GitHub
+bid
+close when fix against issue gets merged (1:1 fix closes issue)
+

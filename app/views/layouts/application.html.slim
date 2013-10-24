@@ -13,16 +13,23 @@ html
             = link_to 'codesy.io', root_path
         .navbar-collapse.collapse
           ul class="nav navbar-nav navbar-right"
-            li = link_to 'Sign up', new_user_registration_path
+            li
+              - unless user_signed_in?
+                = link_to 'Sign up', new_user_registration_path
             - if user_signed_in?
               li
-                | Signed in as 
-                = current_user.email
+                p class="navbar-text"
+                  | Signed in as 
+                  = current_user.email
               li = link_to 'Logout', destroy_user_session_path, method: :delete
             - else
               li = link_to 'Sign in', new_user_session_path
 
       .container
         - if flash[:notice]
-          = flash[:notice]
+          .alert.alert-success
+            = flash[:notice]
+        - if flash[:alert]
+          .alert.alert-danger
+            = flash[:alert]
         == yield

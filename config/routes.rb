@@ -1,8 +1,8 @@
 Patronage::Application.routes.draw do
-  devise_for :users
   root to: 'bids#index'
 
-  resources :users do
-    resources :bids
-  end
+  resources :bids
+
+  devise_for :users,
+    :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 end

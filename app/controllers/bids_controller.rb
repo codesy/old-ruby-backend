@@ -4,7 +4,7 @@ class BidsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @bid = Bid.new
   end
 

@@ -38,6 +38,10 @@ end
 # Use Devise for authentication
 gem 'devise'
 
+# Use GitHub's OmniAuth provider
+gem 'omniauth'
+gem 'omniauth-github'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -50,9 +54,12 @@ gem 'devise'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'pry-rails', group: [:development, :test]
+gem 'meta_request', group: :development
 
-gem 'rspec-rails', group: [:development, :test]
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+end
 
 group :test do
   gem 'guard-rspec'

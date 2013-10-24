@@ -1,4 +1,4 @@
-= form_for([@user, @bid], :html => {:class => 'form-horizontal', :role => 'form'}) do |f|
+= form_for(@bid, :html => {:class => 'form-horizontal', :role => 'form'}) do |f|
   fieldset
     .form-group
       = f.label :url, :class => "col-lg-2 control-label"

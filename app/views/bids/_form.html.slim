@@ -1,14 +1,27 @@
-= form_for @bid do |f|
+= form_for(@bid, :html => {:class => 'form-horizontal', :role => 'form'}) do |f|
   fieldset
-    = f.label :username
-    = f.text_field :username
+    .form-group
+      = f.label :username, :class => "col-lg-2 control-label"
+      .col-lg-4
+        = f.text_field :username, :class => "form-control"
 
-    = f.label :url
-    = f.text_field :url
+    .form-group
+      = f.label :url, :class => "col-lg-2 control-label"
+      .col-lg-4
+        = f.text_field :url, :class => "form-control"
 
-    = f.label :offer
-    = f.number_field :offer
+    .form-group
+      = f.label :offer, :class => 'col-lg-2 control-label'
+      div class="col-lg-2 input-group"
+        span class="input-group-addon" $
+        = f.number_field :offer, :class => "form-control"
+        span class="input-group-addon" .00
 
-    = f.label :ask
-    = f.number_field :ask
-  = f.submit
+    .form-group
+      = f.label :ask, :class => 'col-lg-2 control-label'
+      div class="col-lg-2 input-group"
+        span class="input-group-addon" $
+        = f.number_field :ask, :class => "form-control"
+        span class="input-group-addon" .00
+
+  = f.submit :class => "btn btn-primary"

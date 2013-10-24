@@ -8,5 +8,6 @@ html
   body
     - if flash[:notice]
       = flash[:notice]
-    
-    == yield
+
+    .container
+      == yield

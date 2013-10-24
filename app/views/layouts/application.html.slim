@@ -18,6 +18,7 @@ html
               li
                 | Signed in as 
                 = current_user.email
+              li = link_to 'Logout', destroy_user_session_path, method: :delete
             - else
               li = link_to 'Sign in', new_user_session_path
 

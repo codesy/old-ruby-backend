@@ -1,0 +1,13 @@
+h2 Bids
+
+ul
+  - @bids.each do |bid|
+    li
+      .container
+        = link_to bid.url, bid.url
+        p
+          | Offer:
+          = link_to bid.offer
+        p
+          | Ask:
+          = link_to bid.ask

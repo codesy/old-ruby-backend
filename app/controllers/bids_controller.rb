@@ -1,15 +1,18 @@
 class BidsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @bids = Bid.all
   end
 
   def new
     @user = current_user
-    @bid = Bid.new
+    @bid = @user.bids.build
   end
 
   def create
-    @bid = Bid.new(bid_params)
+    @user = current_user
+    @bid = @user.bids.build(bid_params)
 
     if @bid.save
       redirect_to root_path, notice: 'Bid has been created.'

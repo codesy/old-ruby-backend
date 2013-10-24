@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
   def new
+    @user = User.find(params[:user_id])
     @bid = Bid.new
   end
 

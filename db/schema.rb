@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024020857) do
+ActiveRecord::Schema.define(version: 20131024031656) do
 
   create_table "bids", force: true do |t|
     t.string   "username"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20131024020857) do
     t.decimal  "ask"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "bids", ["user_id"], name: "index_bids_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "username"

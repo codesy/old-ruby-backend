@@ -54,5 +54,6 @@ gem 'rspec-rails', group: [:development, :test]
 group :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
+  gem 'shoulda'
   gem 'capybara'
 end

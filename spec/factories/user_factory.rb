@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    username 'alyssahacker'
+    email    'alyssahacker@codesy.io'
+    password 'password'
   end
 end

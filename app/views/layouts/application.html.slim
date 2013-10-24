@@ -11,6 +11,9 @@ html
         .navbar-header
           .navbar-brand
             = link_to 'codesy.io', root_path
+        .navbar-collapse.collapse
+          ul class="nav navbar-nav navbar-right"
+            li = link_to 'Sign up', new_user_registration_path
 
       .container
         - if flash[:notice]

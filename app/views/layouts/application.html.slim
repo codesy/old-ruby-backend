@@ -6,8 +6,13 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    - if flash[:notice]
-      = flash[:notice]
-
     .container
-      == yield
+      .navbar.navbar-default
+        .navbar-header
+          .navbar-brand
+            = link_to 'codesy.io', root_path
+
+      .container
+        - if flash[:notice]
+          = flash[:notice]
+        == yield

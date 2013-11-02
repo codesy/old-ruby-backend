@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore bin/runserver, which contains oauth secrets
+bin/runserver
+
+# Ignore vim swap files
+.*.swp
+.*.swo

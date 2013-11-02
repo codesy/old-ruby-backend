@@ -21,3 +21,52 @@ auth with GitHub
 bid
 close when fix against issue gets merged (1:1 fix closes issue)
 
+== Getting Started
+
+1. Install rvm
+
+    $ \curl -L https://get.rvm.io | bash -s stable --rails
+
+2. Clone your fork
+
+    $ git clone git@github.com:YOUR_USERNAME/patronage.git
+
+3. Run bundler to install dependencies
+
+    $ cd patronage
+    $ bundle
+
+4. Run db migrations for tests
+
+    $ rake db:migrate db:test:prepare
+
+5. Run tests
+
+    $ rspec spec
+
+6. Register your app with github at https://github.com/settings/applications/new
+
+    Application name: patronage-dev
+    Homepage URL: http://localhost:3000
+    Authorization callback URL: http://localhost:3000/users/auth/github/callback
+
+7. create an executable script similar to the following:
+
+    $ cat > bin/runserver << EOF
+    #!/bin/bash
+    export GITHUB_OAUTH_CLIENT_ID=your_oauth_client_id
+    export GITHUB_OAUTH_CLIENT_SECRET=your_oauth_client_secret
+    rails server
+    EOF
+
+    $ chmod 700 bin/runserver
+
+6. run dev server
+
+    $ bin/runserver
+
+7. Sign in to your dev server with your github account
+
+8. ???
+
+9. Profit!

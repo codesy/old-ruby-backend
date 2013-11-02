@@ -234,7 +234,7 @@ Devise.setup do |config|
   config.omniauth :github, 
     ENV['GITHUB_OAUTH_CLIENT_ID'],
     ENV['GITHUB_OAUTH_CLIENT_SECRET'],
-    :scope => 'user,public_repo'
+    :scope => 'user:email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

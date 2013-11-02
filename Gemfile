@@ -58,9 +58,10 @@ gem 'meta_request', group: :development
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
-group :development do
+group :production do
   gem 'pg'
 end
 
@@ -69,5 +70,4 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'capybara'
-  gem 'sqlite3'
 end

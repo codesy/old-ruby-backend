@@ -66,4 +66,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'capybara'
+  gem 'coveralls', require: false
 end

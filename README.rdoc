@@ -2,6 +2,8 @@
 
 {<img src="https://travis-ci.org/codesy/patronage.png" />}[https://travis-ci.org/codesy/patronage]
 
+{<img src="https://coveralls.io/repos/codesy/patronage/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/codesy/patronage]
+
 == Models
 
 Users - Consumers, Providers

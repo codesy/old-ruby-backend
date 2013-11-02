@@ -25,34 +25,38 @@ close when fix against issue gets merged (1:1 fix closes issue)
 
 == Getting Started
 
-1. Install rvm
+1. Install dependencies (If installing a production environment)
+
+    $ sudo apt-get install libpq-dev
+
+2. Install rvm
 
     $ \curl -L https://get.rvm.io | bash -s stable --rails
 
-2. Clone your fork
+3. Clone your fork
 
     $ git clone git@github.com:YOUR_USERNAME/patronage.git
 
-3. Run bundler to install dependencies
+4. Run bundler to install dependencies
 
     $ cd patronage
     $ bundle
 
-4. Run db migrations for tests
+5. Run db migrations for tests
 
     $ rake db:migrate db:test:prepare
 
-5. Run tests
+6. Run tests
 
     $ rspec spec
 
-6. Register your app with github at https://github.com/settings/applications/new
+7. Register your app with github at https://github.com/settings/applications/new
 
     Application name: patronage-dev
     Homepage URL: http://localhost:3000
     Authorization callback URL: http://localhost:3000/users/auth/github/callback
 
-7. create an executable script similar to the following:
+8. create an executable script similar to the following:
 
     $ cat > bin/runserver << EOF
     #!/bin/bash
@@ -63,12 +67,12 @@ close when fix against issue gets merged (1:1 fix closes issue)
 
     $ chmod 700 bin/runserver
 
-6. run dev server
+9. run dev server
 
     $ bin/runserver
 
-7. Sign in to your dev server with your github account
+10. Sign in to your dev server with your github account
 
-8. ???
+11. ???
 
-9. Profit!
+12. Profit!

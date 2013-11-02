@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe BidsHelper do
+describe HomeHelper do
 end

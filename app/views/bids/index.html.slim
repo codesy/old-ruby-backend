@@ -1,13 +1,15 @@
 h2 Bids
 
-ul
-  - @bids.each do |bid|
-    li
-      .container
-        = link_to bid.url, bid.url
-        p
-          | Offer:
-          = link_to bid.offer
-        p
-          | Ask:
-          = link_to bid.ask
+table class="table table-striped table-hover"
+  thead
+    th Created by
+    th URL
+    th Offer
+    th Ask
+  tbody
+    - @bids.each do |bid|
+      tr
+        td.email = bid.user.email
+        td.url = link_to bid.url, bid.url
+        td.offer = link_to bid.offer
+        td.ask = link_to bid.ask

@@ -1,5 +1,5 @@
 Patronage::Application.routes.draw do
-  root to: 'bids#index'
+  root to: 'home#index'
 
   resources :bids
 

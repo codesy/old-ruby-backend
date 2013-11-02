@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
+  before_action :authorize_admin!, only: [:index]
 
   def index
     @bids = Bid.all

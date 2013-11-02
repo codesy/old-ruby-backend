@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use Slim for templating
 gem 'slim', '~> 2.0.1'
@@ -59,6 +58,11 @@ gem 'meta_request', group: :development
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :test do

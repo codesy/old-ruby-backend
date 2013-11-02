@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Ignore code coverage reports.
+/coverage/*.json
+
 # Ignore bin/runserver, which contains oauth secrets
 bin/runserver
 

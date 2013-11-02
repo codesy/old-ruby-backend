@@ -25,9 +25,11 @@ close when fix against issue gets merged (1:1 fix closes issue)
 
 == Getting Started
 
-1. Install dependencies (If installing a production environment)
+1. Install dependencies
 
-    $ sudo apt-get install libpq-dev
+    $ sudo apt-get install libpq-dev (If installing a production environment)
+    
+    You will also need a javascript environment (like NodeJS) supported by execjs
 
 2. Install rvm
 

@@ -1,4 +1,7 @@
 = form_for(@bid, :html => {:class => 'form-horizontal', :role => 'form'}) do |f|
+  - @bid.errors.full_messages.each do |message|
+    .alert.alert-danger
+      = message
   fieldset
     .form-group
       = f.label :url, :class => "col-lg-2 control-label"

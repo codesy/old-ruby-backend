@@ -43,6 +43,28 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Use database_cleaner to truncate the test database between each test
+  config.before :suite do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+  end
+
+  config.before :each do
+    DatabaseCleaner.start
+  end
+
+  config.after :each do
+    DatabaseCleaner.clean
+  end
+
+  config.before :all do
+    DatabaseCleaner.start
+  end
+
+  config.after :all do
+    DatabaseCleaner.clean
+  end
+
   # Devise test helpers
   config.include Devise::TestHelpers, :type => :controller
 end

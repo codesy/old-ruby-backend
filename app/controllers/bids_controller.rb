@@ -1,9 +1,9 @@
 class BidsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authorize_admin!, only: [:index]
 
   def index
-    @bids = Bid.all
+    @user = current_user
+    @bids = @user.bids
   end
 
   def new

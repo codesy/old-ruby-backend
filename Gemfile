@@ -68,6 +68,7 @@ end
 group :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
+  gem 'database_cleaner', '~> 1.2.0'
   gem 'shoulda'
   gem 'capybara'
   gem 'coveralls', require: false

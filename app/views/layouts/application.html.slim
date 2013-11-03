@@ -28,6 +28,10 @@ html
               li = link_to 'Logout', destroy_user_session_path, method: :delete
             - else
               li = link_to 'Sign in', new_user_session_path
+            li
+              = link_to 'Interested?', 'http://signup.codesy.io'
+            li
+              = link_to 'Github', 'http://github.com/codesy/patronage'
 
       .container
         - if flash[:notice]

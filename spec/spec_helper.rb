@@ -67,4 +67,13 @@ RSpec.configure do |config|
 
   # Devise test helpers
   config.include Devise::TestHelpers, :type => :controller
+
+  # Mock out OmniAuth requests to GitHub
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.add_mock(:github,
+                           {:provider => 'github',
+                            :uid      => '12345',
+                            :info     => {'name' => 'Alyssa Hacker'},
+                            :email    => 'alyssahacker@codesy.io'})
+  config.include OmniAuthHelper, :type => :feature
 end

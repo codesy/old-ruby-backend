@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'Viewing bids' do
   before :all do
+    FactoryGirl.reload
     @user  = FactoryGirl.create(:user)
     @admin = FactoryGirl.create(:admin)
 

@@ -11,12 +11,6 @@ class Bid < ActiveRecord::Base
     presence:     true,
     numericality: { greater_than_or_equal_to: 0 }
 
-  def to_builder
-    Jbuilder.new do |bid|
-      bid.user_id user_id
-      bid.url     url
-      bid.offer   offer
-      bid.ask     ask
-    end
-  end
+  scope :for_user, ->(user) { where(user: user) }
+  scope :for_url,  ->(url)  { where(url: url)   }
 end

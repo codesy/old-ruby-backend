@@ -45,7 +45,7 @@
     #!/bin/bash
     export GITHUB_OAUTH_CLIENT_ID=your_oauth_client_id
     export GITHUB_OAUTH_CLIENT_SECRET=your_oauth_client_secret
-    rails server
+    bundle exec unicorn --host 0.0.0.0 --port 3000
     EOF
 
     $ chmod 700 bin/runserver

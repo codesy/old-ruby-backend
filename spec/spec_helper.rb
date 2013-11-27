@@ -65,6 +65,9 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  # Render Jbuilder views
+  config.render_views = true
+
   # Devise test helpers
   config.include Devise::TestHelpers, :type => :controller
 
@@ -75,5 +78,5 @@ RSpec.configure do |config|
                             :uid      => '12345',
                             :info     => {'name' => 'Alyssa Hacker'},
                             :email    => 'alyssahacker@codesy.io'})
-  config.include OmniAuthHelper, :type => :feature
+  config.include OmniAuthHelper
 end

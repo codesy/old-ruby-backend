@@ -1,5 +1,8 @@
 class Api::V1::BidsController < Api::V1::BaseController
+  before_action :authenticate_user!
+
   def index
-    respond_with(Bid.all)
+    @user = current_user
+    @bids = @user.bids
   end
 end

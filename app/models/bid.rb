@@ -10,7 +10,4 @@ class Bid < ActiveRecord::Base
   validates :ask,
     presence:     true,
     numericality: { greater_than_or_equal_to: 0 }
-
-  scope :for_user, ->(user) { where(user: user) }
-  scope :for_url,  ->(url)  { where(url: url)   }
 end

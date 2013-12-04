@@ -26,7 +26,5 @@ module Patronage
     # config.i18n.default_locale = :de
 
     config.assets.paths << Rails.root + '/vendor/assets/fonts'
-
-    config.use_ssl = false
   end
 end

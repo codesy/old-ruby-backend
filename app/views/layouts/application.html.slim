@@ -17,9 +17,6 @@ html
               li
                 = link_to 'New Bid', new_bid_path
           ul class="nav navbar-nav navbar-right"
-            li
-              - unless user_signed_in?
-                = link_to 'Sign up', new_user_registration_path
             - if user_signed_in?
               li
                 p class="navbar-text"

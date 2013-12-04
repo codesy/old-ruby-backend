@@ -36,26 +36,42 @@
 7. Register your app with github at https://github.com/settings/applications/new
 
     Application name: patronage-dev
-    Homepage URL: http://localhost:3000
-    Authorization callback URL: http://localhost:3000/users/auth/github/callback
+    Homepage URL: https://localhost:3000
+    Authorization callback URL: https://localhost:3000/users/auth/github/callback
 
-8. create an executable script similar to the following:
+8. Generate a signing key with any passphrase
+
+    $ openssl genrsa -des3 -out server.orig.key 2048
+
+9. Convert the signing key to an RSA key, removing the passphrase
+
+    $ openssl rsa -in server.orig.key -out server.key
+
+10. Create the certificate request. Set "common name" to `localhost`:
+
+    $ openssl req -new -key server.key -out server.csr
+
+11. Create a self-signed certificate
+
+    $ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+12. Create an executable script similar to the following:
 
     $ cat > bin/runserver << EOF
     #!/bin/bash
     export GITHUB_OAUTH_CLIENT_ID=your_oauth_client_id
     export GITHUB_OAUTH_CLIENT_SECRET=your_oauth_client_secret
-    bundle exec unicorn --host 0.0.0.0 --port 3000
+    bundle exec thin start --ssl --ssl-verify --ssl-key-file server.key --ssl-cert-file server.crt
     EOF
 
     $ chmod 700 bin/runserver
 
-9. run dev server
+13. Launch dev server
 
     $ bin/runserver
 
-10. Sign in to your dev server with your github account
+14. Sign in to your dev server with your github account
 
-11. ???
+15. ???
 
-12. Profit!
+16. Profit!

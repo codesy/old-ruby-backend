@@ -11,6 +11,7 @@ Patronage::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :bids
+      resource :csrf_token
     end
   end
 
